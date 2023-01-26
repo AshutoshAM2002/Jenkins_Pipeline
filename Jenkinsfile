@@ -13,21 +13,21 @@ pipeline {
         }
         stage('Clean') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_03-docker-agent"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn clean'
                 }
             }
         }
         stage('Test') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_03-docker-agent"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn test'
                 }
             }
         }
         stage('Package') {
             steps {
-                dir("${env.WORKSPACE}/Ch04/04_03-docker-agent"){
+                dir("${env.WORKSPACE}"){
                     sh 'mvn package -DskipTests'
                 }
             }
